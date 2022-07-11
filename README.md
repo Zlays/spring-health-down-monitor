@@ -1,5 +1,14 @@
 # Spring health down monitor
 
+## Usage
+```
+<dependency>
+    <groupId>it.zlays</groupId>
+    <artifactId>spring-health-down-monitor</artifactId>
+    <version>1.0.0</version>
+</dependency>
+```
+
 ## Custom properties
 ```
 # Custom properties
