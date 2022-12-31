@@ -2,11 +2,11 @@
 
 ## Usage
 ```
-<dependency>
-    <groupId>it.zlays</groupId>
-    <artifactId>spring-health-down-monitor</artifactId>
-    <version>1.0.0</version>
-</dependency>
+    <dependency>
+            <groupId>it.zlays</groupId>
+            <artifactId>springhealthdownmonitor</artifactId>
+            <version>1.0.0</version>
+        </dependency>
 ```
 
 ## Custom properties
