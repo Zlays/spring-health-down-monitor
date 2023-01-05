@@ -1,4 +1,6 @@
 **/.scannerwork/**
+.sonar_lock
+**/target/**
 
 # Compiled class file
 *.class
