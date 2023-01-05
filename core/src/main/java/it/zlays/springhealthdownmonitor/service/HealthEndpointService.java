@@ -18,32 +18,32 @@ import java.time.LocalDateTime;
 @Service
 @Slf4j
 public class HealthEndpointService {
-	
-	@Value( "${health.save.db:true}" )
-	private boolean saveOnDB;
-	
-	@Autowired
-	private HealthEndpoint healthEndpoint;
-	
-	@Autowired
-	private HealthRepository healthRepository;
-	
-	public HealthComponent health( ) throws JsonProcessingException {
-		HealthComponent health = healthEndpoint.health();
-		
-		if( !health.getStatus().equals( Status.UP ) ) {
-			String json = Utils.OW.writeValueAsString( health );
-			log.warn( "Health DOWN: ".concat( json ) );
-			try {
-				if( saveOnDB ) {
-					healthRepository.save( new HealthEntity( null, json, LocalDateTime.now() ) );
-				}
-			} catch( Exception ignored ) {
-				// Ignore
-			}
-		}
-		
-		return health;
-	}
-	
+
+    @Value("${health.save.db:true}")
+    private boolean saveOnDB;
+
+    @Autowired
+    private HealthEndpoint healthEndpoint;
+
+    @Autowired
+    private HealthRepository healthRepository;
+
+    public HealthComponent health() throws JsonProcessingException {
+        HealthComponent health = healthEndpoint.health();
+
+        if (!health.getStatus().equals(Status.UP)) {
+            String json = Utils.OW.writeValueAsString(health);
+            log.warn("Health DOWN: ".concat(json));
+            try {
+                if (saveOnDB) {
+                    healthRepository.save(new HealthEntity(null, json, LocalDateTime.now()));
+                }
+            } catch (Exception ignored) {
+                // Ignore
+            }
+        }
+
+        return health;
+    }
+
 }
