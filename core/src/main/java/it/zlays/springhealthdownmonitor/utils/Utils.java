@@ -7,4 +7,8 @@ public class Utils {
 
     public static final ObjectWriter OW = new ObjectMapper().writer().withDefaultPrettyPrinter();
 
+    private Utils() {
+
+    }
+
 }

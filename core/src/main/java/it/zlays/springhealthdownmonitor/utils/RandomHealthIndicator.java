@@ -6,7 +6,7 @@ import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.security.SecureRandom;
 
 @Component
 @ConditionalOnProperty(prefix = "health", name = "test.active", havingValue = "true")
@@ -17,7 +17,9 @@ public class RandomHealthIndicator implements HealthIndicator {
 
     @Override
     public Health health() {
-        double chance = ThreadLocalRandom.current().nextDouble(0, 100);
+        SecureRandom random = new SecureRandom();
+        random.nextBytes(new byte[20]);
+        double chance = random.nextInt(100);
         Health.Builder status = Health.up();
         if (chance < failurePercent) {
             status = Health.down();
