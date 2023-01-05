@@ -1,6 +1,7 @@
 # Spring health down monitor
 
 ## Usage
+
 ```
     <dependency>
             <groupId>it.zlays</groupId>
@@ -10,6 +11,7 @@
 ```
 
 ## Custom properties
+
 ```
 # Custom properties
 health.save.db=true
@@ -23,6 +25,7 @@ health.test.failure.percent:50
 ```
 
 ### Actuator
+
 ```
 # Actuator
 management.endpoints.web.exposure.include=*
@@ -32,12 +35,14 @@ management.endpoint.health.show-details=always
 ```
 
 ### LOG
+
 ```
 # LOG
 logging.level.it.zlays.springhealthdownmonitor=DEBUG
 ```
 
 ## Deploy
+
 ```
 mvn clean deploy -Dgpg.passphrase="myPassphrase" -Pci-cd
 ```
