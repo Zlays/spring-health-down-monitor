@@ -11,15 +11,15 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table( name = "health", schema = "public" )
+@Table(name = "health", schema = "public")
 public class HealthEntity {
-	
-	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )
-	private Long id;
-	
-	private String status;
-	
-	private LocalDateTime timestamp;
-	
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    private String status;
+
+    private LocalDateTime timestamp;
+
 }

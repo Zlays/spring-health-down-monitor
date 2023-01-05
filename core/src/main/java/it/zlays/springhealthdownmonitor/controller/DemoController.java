@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping( "actuator" )
+@RequestMapping("actuator")
 public class DemoController {
-	
-	@Autowired
-	private HealthEndpointService healthEndpointService;
-	
-	@GetMapping( "health" )
-	public HealthComponent health( ) throws JsonProcessingException {
-		return healthEndpointService.health();
-	}
-	
+
+    @Autowired
+    private HealthEndpointService healthEndpointService;
+
+    @GetMapping("health")
+    public HealthComponent health() throws JsonProcessingException {
+        return healthEndpointService.health();
+    }
+
 }
