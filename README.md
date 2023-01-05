@@ -1,4 +1,5 @@
 # Spring health down monitor
+[![Quality Gate](https://sonarcloud.io/api/project_badges/quality_gate?project=Zlays_spring-health-down-monitor)](https://sonarcloud.io/summary/overall?id=Zlays_spring-health-down-monitor)
 
 ## Usage
 
